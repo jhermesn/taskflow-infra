@@ -28,8 +28,8 @@ terraform -chdir=_bootstrap init && terraform -chdir=_bootstrap apply
 | Workflow | Trigger |
 |----------|---------|
 | `provision-dev` / `provision-prod` | manual |
-| `enable-dev` / `enable-prod` | manual + cron (dev: 08:00 BRT) |
-| `disable-dev` / `disable-prod` | manual + cron (dev: 18:00 BRT) |
+| `enable-dev` / `enable-prod` | manual |
+| `disable-dev` / `disable-prod` | manual |
 | `destroy-dev` / `destroy-prod` | manual |
 
 ## Per-environment secrets/variables
