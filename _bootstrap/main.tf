@@ -161,7 +161,10 @@ resource "aws_iam_role_policy" "infra_deploy" {
           "logs:TagResource", "logs:UntagResource",
           "logs:ListTagsForResource", "logs:ListTagsLogGroup",
         ]
-        Resource = "arn:aws:logs:*:*:log-group:/ecs/${local.project}-*"
+        Resource = [
+          "arn:aws:logs:*:*:log-group:/ecs/${local.project}-*",
+          "arn:aws:logs:*:*:log-group:/aws/ecs/${local.project}-*",
+        ]
       },
       {
         Effect   = "Allow"
