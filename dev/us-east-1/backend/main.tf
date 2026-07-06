@@ -132,6 +132,8 @@ module "alb" {
   vpc_id  = data.terraform_remote_state.networking.outputs.vpc_id
   subnets = data.terraform_remote_state.networking.outputs.public_subnet_ids
 
+  enable_deletion_protection = false
+
   security_group_ingress_rules = {
     http = { from_port = 80, to_port = 80, ip_protocol = "tcp", cidr_ipv4 = "0.0.0.0/0" }
   }
