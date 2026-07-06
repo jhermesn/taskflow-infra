@@ -2,8 +2,6 @@ name: Disable Infrastructure - DEV
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 21 * * 1-5"   # 18:00 BRT Mon-Fri
 
 permissions: {}
 
