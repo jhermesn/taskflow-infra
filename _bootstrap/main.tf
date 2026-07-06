@@ -119,6 +119,10 @@ resource "aws_iam_role_policy" "infra_deploy" {
           "ecs:CreateCluster", "ecs:DeleteCluster", "ecs:PutClusterCapacityProviders",
           "ecs:TagResource", "ecs:UntagResource", "ecs:ListTagsForResource",
           "ecs:DescribeCapacityProviders",
+          "ecs:DescribeTaskDefinition", "ecs:ListTaskDefinitions",
+          "ecs:DeregisterTaskDefinition",
+          "ecs:DescribeTasks", "ecs:ListTasks",
+          "ecs:RegisterTaskDefinition",
         ]
         Resource = "*"
       },
