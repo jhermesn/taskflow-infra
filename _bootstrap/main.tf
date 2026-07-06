@@ -99,24 +99,8 @@ resource "aws_iam_role_policy" "infra_deploy" {
         Resource = ["arn:aws:s3:::${local.project}*", "arn:aws:s3:::${local.project}*/*"]
       },
       {
-        Effect = "Allow"
-        Action = [
-          "ec2:Describe*",
-          "ec2:CreateVpc", "ec2:DeleteVpc", "ec2:ModifyVpcAttribute",
-          "ec2:CreateSubnet", "ec2:DeleteSubnet", "ec2:ModifySubnetAttribute",
-          "ec2:CreateInternetGateway", "ec2:AttachInternetGateway",
-          "ec2:DetachInternetGateway", "ec2:DeleteInternetGateway",
-          "ec2:CreateRouteTable", "ec2:DeleteRouteTable",
-          "ec2:CreateRoute", "ec2:DeleteRoute",
-          "ec2:AssociateRouteTable", "ec2:DisassociateRouteTable",
-          "ec2:CreateSecurityGroup", "ec2:DeleteSecurityGroup",
-          "ec2:AuthorizeSecurityGroupIngress", "ec2:RevokeSecurityGroupIngress",
-          "ec2:AuthorizeSecurityGroupEgress", "ec2:RevokeSecurityGroupEgress",
-          "ec2:ModifySecurityGroupRules",
-          "ec2:CreateTags", "ec2:DeleteTags",
-          "ec2:AllocateAddress", "ec2:ReleaseAddress",
-          "ec2:CreateNatGateway", "ec2:DeleteNatGateway",
-        ]
+        Effect   = "Allow"
+        Action   = ["ec2:*"]
         Resource = "*"
       },
       {
