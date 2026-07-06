@@ -16,7 +16,7 @@ terraform -chdir=_bootstrap init && terraform -chdir=_bootstrap apply
 
 # 2. Set GitHub secrets from bootstrap outputs:
 #    infra_deploy_role_arn → AWS_DEPLOY_ROLE_ARN  (taskflow-infra environments)
-#    app_deploy_role_arn   → APP_DEPLOY_ROLE_ARN  (taskflow-api environments)
+#    app_deploy_role_arn   → APP_DEPLOY_ROLE_ARN  (taskflow-app environments)
 
 # 3. Run "Provision Infrastructure - DEV/PROD" workflow
 

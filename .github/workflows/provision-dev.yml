@@ -50,7 +50,7 @@ jobs:
             echo "| ALB | http://${ALB} |"
             echo "| ECR | ${ECR} |"
             echo ""
-            echo "Set these in the **dev** environment of **taskflow-api**:"
+            echo "Set these in the **dev** environment of **taskflow-app**:"
             echo "- \`ECR_REPOSITORY_URL\` - \`${ECR}\`"
             echo "- \`ECS_CLUSTER_NAME\` - \`${CLUSTER}\`"
             echo "- \`ECS_SERVICE_NAME\` - \`${SERVICE}\`"
