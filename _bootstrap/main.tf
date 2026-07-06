@@ -66,9 +66,12 @@ data "aws_iam_policy_document" "infra_assume" {
       identifiers = [aws_iam_openid_connect_provider.github.arn]
     }
     condition {
-      test     = "StringLike"
+      test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:jhermesn/taskflow-infra:*"]
+      values   = [
+        "repo:jhermesn/taskflow-infra:environment:dev",
+        "repo:jhermesn/taskflow-infra:environment:prod",
+      ]
     }
     condition {
       test     = "StringEquals"
@@ -213,9 +216,12 @@ data "aws_iam_policy_document" "app_assume" {
       identifiers = [aws_iam_openid_connect_provider.github.arn]
     }
     condition {
-      test     = "StringLike"
+      test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:jhermesn/taskflow-app:*"]
+      values   = [
+        "repo:jhermesn/taskflow-app:environment:dev",
+        "repo:jhermesn/taskflow-app:environment:prod",
+      ]
     }
     condition {
       test     = "StringEquals"
