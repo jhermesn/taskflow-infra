@@ -67,7 +67,10 @@ resource "aws_ecr_lifecycle_policy" "app" {
 data "aws_iam_policy_document" "ecs_assume" {
   statement {
     actions    = ["sts:AssumeRole"]
-    principals { type = "Service", identifiers = ["ecs-tasks.amazonaws.com"] }
+    principals {
+      type        = "Service"
+      identifiers = ["ecs-tasks.amazonaws.com"]
+    }
   }
 }
 
